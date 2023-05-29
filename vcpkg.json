@@ -1,0 +1,13 @@
+{
+  "name": "sim-harness",
+  "version": "1.0.0",
+  "description": "NYU Processor Design's Simulator Harness",
+  "homepage": "https://github.com/NYU-Processor-Design/sim-harness",
+  "maintainers": [
+    "Vito Gamberini <vito@gamberini.email>"
+  ],
+  "license": "CC0-1.0",
+  "dependencies": [
+    "fmt"
+  ]
+}
