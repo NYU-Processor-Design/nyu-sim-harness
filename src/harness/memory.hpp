@@ -11,7 +11,9 @@
 
 namespace nyu {
 
-template <size_t PgSize, size_t NumPg, typename Word> class ContiguousMemory {
+template <size_t PgSize, size_t NumPg, typename Word = std::uint32_t,
+    size_t MemoryFill = 0x0>
+class ContiguousMemory {
   using Page = std::array<Word, PgSize>;
 
 public:
@@ -68,8 +70,9 @@ private:
     if(auto it {mem.find(pgNum)}; it != mem.end())
       return it->second;
 
-    mem[pgNum] = {};
-    return mem[pgNum];
+    Page& pg {mem[pgNum]};
+    pg.fill(MemoryFill);
+    return pg;
   }
 };
 
